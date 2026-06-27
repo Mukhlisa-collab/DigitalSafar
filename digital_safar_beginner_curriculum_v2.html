@@ -1,0 +1,340 @@
+
+<h2 class="sr-only">Digital Safar complete beginner curriculum with bonus tech updates section</h2>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.wrap{background:#F7EDD8;font-family:'Segoe UI',Arial,sans-serif;padding-bottom:28px}
+.header{background:#1B3A2D;padding:18px 16px 14px}
+.brand-sub{font-size:10px;color:#C9A455;letter-spacing:3px;font-weight:600;text-align:center;margin-bottom:4px}
+.brand-title{font-size:22px;font-weight:500;color:#F7EDD8;text-align:center;margin-bottom:2px}
+.brand-tagline{font-size:11px;color:#C27D8F;font-style:italic;text-align:center;margin-bottom:14px}
+.prog-box{background:rgba(255,255,255,0.1);border-radius:10px;padding:10px 14px}
+.prog-row{display:flex;justify-content:space-between;margin-bottom:6px}
+.prog-label{color:#F7EDD8;font-size:12px}
+.prog-count{color:#C9A455;font-size:12px;font-weight:500}
+.prog-track{background:rgba(255,255,255,0.2);border-radius:20px;height:7px;overflow:hidden}
+.prog-fill{background:#C9A455;height:100%;border-radius:20px;transition:width 0.4s}
+.legend{display:flex;gap:10px;padding:10px 14px 4px;justify-content:center;flex-wrap:wrap}
+.leg-item{display:flex;align-items:center;gap:4px}
+.leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.leg-label{font-size:10px;color:#1B3A2D;opacity:0.65}
+.cats{padding:4px 10px}
+.cat-card{margin-bottom:8px;border-radius:10px;overflow:hidden;border:1px solid rgba(27,58,45,0.15)}
+.cat-hdr{background:#1B3A2D;padding:10px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;user-select:none}
+.cat-icon{font-size:18px;flex-shrink:0}
+.cat-info{flex:1;min-width:0}
+.cat-title{color:#F7EDD8;font-size:13px;font-weight:500}
+.cat-sub{color:#C9A455;font-size:10px;opacity:0.9;margin-top:1px}
+.cat-meta{display:flex;align-items:center;gap:7px;flex-shrink:0}
+.lvl-badge{color:white;font-size:8px;padding:2px 6px;border-radius:20px;font-weight:700;letter-spacing:0.5px}
+.cat-count{color:#C9A455;font-size:11px;font-weight:500}
+.cat-arrow{color:rgba(247,237,216,0.6);font-size:12px}
+.mini-prog{background:#1B3A2D;padding:0 14px 6px}
+.mini-track{background:rgba(255,255,255,0.2);border-radius:20px;height:3px;overflow:hidden}
+.mini-fill{background:#C9A455;height:100%;border-radius:20px}
+.topics-wrap{background:white}
+.topic-row{padding:10px 14px;display:flex;align-items:flex-start;gap:10px;cursor:pointer;border-bottom:1px solid rgba(27,58,45,0.07);transition:background 0.15s}
+.topic-row:last-child{border-bottom:none}
+.topic-row:hover{background:rgba(201,164,85,0.06)}
+.topic-row.done-row{background:rgba(42,87,64,0.06)}
+.chk{width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;border:2px solid #1B3A2D;background:transparent;transition:all 0.2s}
+.chk.on{background:#1B3A2D;border-color:#1B3A2D}
+.chk-tick{color:#C9A455;font-size:11px;font-weight:700;display:none}
+.chk.on .chk-tick{display:block}
+.t-text{font-size:12.5px;color:#1B3A2D;line-height:1.45}
+.t-text.done-text{color:#2A5740;font-weight:500}
+.sess-badge{display:inline-block;margin-top:3px;background:rgba(42,87,64,0.1);color:#2A5740;font-size:10px;padding:2px 7px;border-radius:20px;font-weight:600}
+.bonus-card{margin-bottom:8px;border-radius:10px;overflow:hidden;border:2px solid #C9A455}
+.bonus-hdr{background:#1B3A2D;padding:10px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;user-select:none}
+.bonus-note{background:#fffbf0;padding:8px 14px;font-size:11px;color:#7a6000;border-bottom:1px solid rgba(201,164,85,0.2);display:flex;align-items:center;gap:6px}
+.footer{text-align:center;padding:14px;margin-top:4px}
+.phase-label{padding:6px 12px 2px;font-size:10px;letter-spacing:2px;color:#1B3A2D;opacity:0.45;font-weight:600}
+</style>
+
+<div class="wrap" id="app">
+  <div class="header">
+    <div class="brand-sub">LEARN WITH MUKHLISA</div>
+    <div class="brand-title">Digital Safar</div>
+    <div class="brand-tagline">Seekh rahi hoon • Seekha rahi hoon</div>
+    <div class="prog-box">
+      <div class="prog-row">
+        <span class="prog-label">Overall Progress</span>
+        <span class="prog-count" id="prog-text">0/0 topics</span>
+      </div>
+      <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="leg-item"><div class="leg-dot" style="background:#2A5740"></div><span class="leg-label">Beginner</span></div>
+    <div class="leg-item"><div class="leg-dot" style="background:#C9A455"></div><span class="leg-label">Intermediate</span></div>
+    <div class="leg-item"><div class="leg-dot" style="background:#C27D8F"></div><span class="leg-label">Advanced</span></div>
+    <div class="leg-item"><div class="leg-dot" style="background:#C9A455;border:1px solid #C9A455"></div><span class="leg-label">⚡ Bonus (har session)</span></div>
+  </div>
+
+  <div class="cats" id="cats"></div>
+
+  <div class="footer">
+    <div style="color:#1B3A2D;opacity:0.4;font-size:11px">Noor ul Hidayah • Digital Safar Series</div>
+    <div style="color:#C27D8F;font-size:11px;margin-top:2px">Progress auto-save hoti hai ✨</div>
+  </div>
+</div>
+
+<script>
+const CURRICULUM = [
+  {phase:"📚 PHASE 1 — Bunyaad (True Beginner)", cats:[
+    {id:"devices", icon:"💻", title:"Computer & Device Basics", sub:"Sab se pehle yahi seekhna zaroori hai", level:"Beginner", lc:"#2A5740", topics:[
+      {id:"dv1",text:"Devices ka taaruf: Computer, Laptop, Tablet, Smartphone — farq kya"},
+      {id:"dv2",text:"Computer/laptop ON, OFF, Restart properly karna"},
+      {id:"dv3",text:"Desktop samajhna: icons, taskbar, Start menu, notification area"},
+      {id:"dv4",text:"Mouse use karna: click, double-click, right-click, scroll wheel"},
+      {id:"dv5",text:"Keyboard basics: letters, numbers, Enter, Backspace, Delete, Shift, Caps Lock, Escape"},
+      {id:"dv6",text:"Volume, brightness, Wi-Fi, Bluetooth control karna"},
+      {id:"dv7",text:"Screenshot lena: Windows (Win+Shift+S) aur phone par"},
+      {id:"dv8",text:"Copy, Cut, Paste samajhna — mouse se aur keyboard se"},
+      {id:"dv9",text:"Zoom in / Zoom out — text bada karna screen par"},
+      {id:"dv10",text:"Printer se document print karna"},
+    ]},
+    {id:"typing", icon:"⌨️", title:"Typing & Keyboard Skills", sub:"Digital duniya ki boli seekhna", level:"Beginner", lc:"#2A5740", topics:[
+      {id:"ty1",text:"Typing basics: home row kya hoti hai, fingers kahan rakhein"},
+      {id:"ty2",text:"Essential shortcuts: Ctrl+C, Ctrl+V, Ctrl+Z, Ctrl+A, Ctrl+S, Ctrl+P"},
+      {id:"ty3",text:"Special characters type karna: @, #, /, *, (, ), _ etc."},
+      {id:"ty4",text:"Urdu / Hindi typing options (Google Input Tools — bilkul free)"},
+      {id:"ty5",text:"Autocorrect: fayda kya hai aur kab problem hoti hai"},
+      {id:"ty6",text:"Free typing practice websites (10FastFingers, TypingClub)"},
+    ]},
+    {id:"internet", icon:"🌐", title:"Internet & Browser Basics", sub:"Online duniya mein qadam rakhna", level:"Beginner", lc:"#2A5740", topics:[
+      {id:"in1",text:"Internet kya hai? Kaise kaam karta hai — simple explanation"},
+      {id:"in2",text:"Wi-Fi connect karna (ghar ka aur public Wi-Fi — safety ke saath)"},
+      {id:"in3",text:"Browser kya hai? Chrome, Firefox, Edge — kaunsa behtar"},
+      {id:"in4",text:"Tabs, bookmarks, browser history — efficiently use karna"},
+      {id:"in5",text:"Google search smart tips: quotes, site:, filetype: use karna"},
+      {id:"in6",text:"URL kya hai? HTTPS aur safe sites kaise pehchane"},
+      {id:"in7",text:"YouTube properly use karna: search, subscribe, playlists, history"},
+      {id:"in8",text:"Incognito / Private mode kya hai aur kab use karein"},
+      {id:"in9",text:"Internet speed test karna (speedtest.net)"},
+    ]},
+    {id:"email", icon:"📧", title:"Email & Digital Communication", sub:"Pehle Google account, phir sab kuch", level:"Beginner", lc:"#2A5740", topics:[
+      {id:"em1",text:"Google Account banana — yeh sab ki bunyaad hai (Gmail, Drive, YouTube sab isi se)"},
+      {id:"em2",text:"Gmail basics: inbox, sent, drafts, trash samajhna"},
+      {id:"em3",text:"Email likhna, bhejna, reply karna, forward karna"},
+      {id:"em4",text:"CC aur BCC ka farq — kab use karein"},
+      {id:"em5",text:"Photos aur files attachment mein bhejna"},
+      {id:"em6",text:"Email organize karna: labels, folders, stars, search"},
+      {id:"em7",text:"Spam kya hai? Spam se kaise bacha jaye"},
+      {id:"em8",text:"WhatsApp Web aur Desktop properly use karna"},
+      {id:"em9",text:"Video calls: WhatsApp Video, Google Meet, Zoom setup karna"},
+    ]},
+    {id:"mobile", icon:"📱", title:"Mobile Skills", sub:"Phone sirf calls ke liye nahi hai", level:"Beginner", lc:"#2A5740", topics:[
+      {id:"mb1",text:"Phone buttons samajhna: power, volume, home, back"},
+      {id:"mb2",text:"Settings samajhna: notifications, Do Not Disturb, battery saver"},
+      {id:"mb3",text:"Mobile data vs Wi-Fi: farq aur manage karna"},
+      {id:"mb4",text:"Play Store / App Store se apps safely download karna"},
+      {id:"mb5",text:"Phone storage manage karna (kya delete karein, kya rakhein)"},
+      {id:"mb6",text:"Mobile photography tips: lighting, angles, portrait mode"},
+      {id:"mb7",text:"Screen record karna: Android aur iPhone dono par"},
+      {id:"mb8",text:"QR codes scan karna aur banana"},
+      {id:"mb9",text:"Contacts aur photos backup karna (Google Photos)"},
+      {id:"mb10",text:"Mobile hotspot share karna"},
+    ]},
+    {id:"files", icon:"📁", title:"Files, Folders & Storage", sub:"Digital cheezein sambhaalna", level:"Beginner", lc:"#2A5740", topics:[
+      {id:"fl1",text:"Files aur folders kya hain — real life misaal se samajhna"},
+      {id:"fl2",text:"File types samajhna: .pdf, .jpg, .png, .docx, .mp4, .xlsx"},
+      {id:"fl3",text:"Files rename, move, copy, delete karna"},
+      {id:"fl4",text:"Recycle Bin / Trash samajhna — deleted file wapas aana"},
+      {id:"fl5",text:"Google Drive: upload, share, organize karna"},
+      {id:"fl6",text:"Cloud storage vs local storage — kya safe hai kahan"},
+      {id:"fl7",text:"Zip files: banana aur kholna"},
+      {id:"fl8",text:"Phone se PC mein files transfer karna (USB + wireless)"},
+      {id:"fl9",text:"Pen drive / USB drive use karna"},
+      {id:"fl10",text:"File size samajhna: KB, MB, GB, TB ka farq"},
+    ]},
+    {id:"safety", icon:"🔒", title:"Online Safety", sub:"Internet par mehfooz rehna — must hai", level:"Beginner", lc:"#2A5740", topics:[
+      {id:"sf1",text:"Strong password kya hota hai — kaise banate hain"},
+      {id:"sf2",text:"Password manager use karna: Google Password Manager (free)"},
+      {id:"sf3",text:"2-Factor Authentication (2FA) setup karna — extra taala"},
+      {id:"sf4",text:"Phishing emails aur fake links kaise pehchanein"},
+      {id:"sf5",text:"WhatsApp scams — jo aajkal common hain (OTP fraud, fake job)"},
+      {id:"sf6",text:"Social media privacy settings set karna (Facebook, Instagram)"},
+      {id:"sf7",text:"Safe online shopping: kya dekhna chahiye pehle"},
+      {id:"sf8",text:"Public Wi-Fi par safe rehna"},
+      {id:"sf9",text:"Bacchon ki online safety: parental controls"},
+      {id:"sf10",text:"Personal data share karna sahi hai ya nahi — poori guide"},
+    ]},
+  ]},
+  {phase:"🚀 PHASE 2 — Ek Qadam Aage (Intermediate)", cats:[
+    {id:"design", icon:"🎨", title:"Design & Content Creation", sub:"Sundar cheezein banana", level:"Intermediate", lc:"#C9A455", topics:[
+      {id:"ds1",text:"Website banana — GitHub Pages se bilkul free",done:true,badge:"Session 1 ✅"},
+      {id:"ds2",text:"Canva vs PowerPoint — comparison aur kab kya use karein",done:true,badge:"Session 2 ✅"},
+      {id:"ds3",text:"Canva advanced tips aur tricks (pro features free mein)"},
+      {id:"ds4",text:"Photo editing basics: Canva aur Lightroom Mobile"},
+      {id:"ds5",text:"Video editing: CapCut beginner se intermediate"},
+      {id:"ds6",text:"YouTube thumbnail banana — click karne wali"},
+      {id:"ds7",text:"Reels aur Shorts banana phone se"},
+      {id:"ds8",text:"AI se images banana: free tools (Ideogram, Adobe Firefly)"},
+    ]},
+    {id:"productivity", icon:"💼", title:"Productivity & Work Tools", sub:"Kaam zyada, mehnat kam", level:"Intermediate", lc:"#C9A455", topics:[
+      {id:"pr1",text:"Google Docs: type, format, share karna"},
+      {id:"pr2",text:"Google Sheets: basic data organize karna, simple formulas"},
+      {id:"pr3",text:"Google Forms: survey, quiz, registration form banana"},
+      {id:"pr4",text:"Google Calendar: appointments aur reminders set karna"},
+      {id:"pr5",text:"Google Keep: quick notes aur checklists"},
+      {id:"pr6",text:"PDF tools (free): merge, compress, convert, split"},
+      {id:"pr7",text:"Notion basics: notes, to-do, planning ek jagah"},
+      {id:"pr8",text:"Trello / ClickUp: tasks visually manage karna"},
+    ]},
+    {id:"presence", icon:"🌍", title:"Online Presence & Social Media", sub:"Apni aawaz online pahunchana", level:"Intermediate", lc:"#C9A455", topics:[
+      {id:"op1",text:"Professional bio banana: short, clear aur impactful"},
+      {id:"op2",text:"Linktree setup: sab links ek hi jagah"},
+      {id:"op3",text:"Instagram for dawah / education: profile set up karna"},
+      {id:"op4",text:"YouTube channel banana: step by step complete guide"},
+      {id:"op5",text:"Facebook: Page vs Group — farq aur kab kya banayein"},
+      {id:"op6",text:"Telegram channel banana"},
+      {id:"op7",text:"Hashtags aur basic SEO: log tumhein kaise dhundhein"},
+      {id:"op8",text:"Content calendar banana: organized aur consistent rehna"},
+    ]},
+    {id:"ai", icon:"🤖", title:"AI Tools", sub:"Zamane ki sabse badi technology", level:"Intermediate", lc:"#C9A455", topics:[
+      {id:"ai1",text:"AI kya hai? Beginners ke liye bilkul simple explanation"},
+      {id:"ai2",text:"ChatGPT use karna: basics aur useful prompts"},
+      {id:"ai3",text:"Claude use karna: kab ChatGPT se behtar hai"},
+      {id:"ai4",text:"AI se Urdu / Hindi mein writing help lena"},
+      {id:"ai5",text:"AI se images banana: free tools ka comparison"},
+      {id:"ai6",text:"Prompt writing: AI se sahi kaam kaise nikaltay hain"},
+      {id:"ai7",text:"AI tools for teachers: lesson plans, quizzes, content banana"},
+      {id:"ai8",text:"AI ki limits kya hain: kya trust karein, kya verify karein"},
+    ]},
+  ]},
+  {phase:"💎 PHASE 3 — Aagey Barho (Advanced)", cats:[
+    {id:"earning", icon:"💰", title:"Earning Online", sub:"Digital skills se halal income", level:"Advanced", lc:"#C27D8F", topics:[
+      {id:"ea1",text:"Freelancing kya hai? Kaise shuru karein bilkul zero se"},
+      {id:"ea2",text:"Fiverr profile banana: kya likhen jo orders ayein"},
+      {id:"ea3",text:"Kaunsi skills online bech sakte hain (list with earnings range)"},
+      {id:"ea4",text:"Digital products banana: ebooks, templates, mini-courses"},
+      {id:"ea5",text:"Online teaching setup: tools, platform, pricing"},
+      {id:"ea6",text:"Payment receive karna: PayPal, Payoneer, bank transfer"},
+    ]},
+  ]},
+  {phase:"⚡ BONUS — Har Session Ke Aakhri 10 Minutes", cats:[
+    {id:"bonus", icon:"⚡", title:"Tech Updates & Bonus Corner", sub:"Har session ke aakhri 10 min — subscribers ka favorite!", level:"Bonus", lc:"#C9A455", isBonus:true, topics:[
+      {id:"bn1",text:"Tech news of the week: kya naya aaya digital duniya mein"},
+      {id:"bn2",text:"New app spotlight: ek useful app detail se dikhaana"},
+      {id:"bn3",text:"AI world update: ChatGPT, Claude, Gemini mein kya naya"},
+      {id:"bn4",text:"Helpful tech tip of the week: ek chhota lekin kamal ka trick"},
+      {id:"bn5",text:"Scam alert: is hafte konsa naya fraud chal raha hai"},
+      {id:"bn6",text:"Website of the week: ek free useful website introduce karna"},
+      {id:"bn7",text:"Q&A from previous session: audience ke baaki sawaal"},
+      {id:"bn8",text:"Tech fun fact: koi interesting digital history ya science"},
+      {id:"bn9",text:"Upcoming session preview: aglay hafte kya sikhenge"},
+      {id:"bn10",text:"Resource share: free PDF, video, ya tool link dena"},
+    ]},
+  ]},
+];
+
+let state={};
+let expanded={devices:true};
+
+async function load(){
+  try{
+    const r=await window.storage.get('safar-v4');
+    if(r) state=JSON.parse(r.value);
+    else{
+      CURRICULUM.forEach(p=>p.cats.forEach(c=>c.topics.forEach(t=>{if(t.done) state[t.id]=true;})));
+    }
+  }catch{
+    CURRICULUM.forEach(p=>p.cats.forEach(c=>c.topics.forEach(t=>{if(t.done) state[t.id]=true;})));
+  }
+  render();
+}
+
+async function save(){
+  try{await window.storage.set('safar-v4',JSON.stringify(state));}catch{}
+}
+
+function stats(){
+  let total=0,done=0;
+  CURRICULUM.forEach(p=>p.cats.forEach(c=>c.topics.forEach(t=>{
+    if(c.isBonus) return;
+    total++;if(state[t.id])done++;
+  })));
+  return{total,done};
+}
+
+function render(){
+  const{total,done}=stats();
+  const pct=Math.round((done/total)*100);
+  document.getElementById('prog-text').textContent=done+'/'+total+' topics  •  '+pct+'%';
+  document.getElementById('prog-fill').style.width=pct+'%';
+
+  const el=document.getElementById('cats');
+  el.innerHTML='';
+
+  CURRICULUM.forEach(phase=>{
+    const pl=document.createElement('div');
+    pl.className='phase-label';
+    pl.textContent=phase.phase;
+    el.appendChild(pl);
+
+    phase.cats.forEach(cat=>{
+      const catDone=cat.topics.filter(t=>state[t.id]).length;
+      const catTotal=cat.topics.length;
+      const catPct=Math.round((catDone/catTotal)*100);
+      const isOpen=!!expanded[cat.id];
+
+      const card=document.createElement('div');
+      card.className=cat.isBonus?'bonus-card cat-card':'cat-card';
+
+      // Header
+      const hdr=document.createElement('div');
+      hdr.className='cat-hdr';
+      const lvlText=cat.isBonus?'HAR SESSION':''+cat.level.toUpperCase();
+      hdr.innerHTML=`<span class="cat-icon">${cat.icon}</span>
+        <div class="cat-info">
+          <div class="cat-title">${cat.title}</div>
+          <div class="cat-sub">${cat.sub}</div>
+        </div>
+        <div class="cat-meta">
+          <span class="lvl-badge" style="background:${cat.lc}">${lvlText}</span>
+          <span class="cat-count">${catDone}/${catTotal}</span>
+          <span class="cat-arrow">${isOpen?'▲':'▼'}</span>
+        </div>`;
+      hdr.onclick=()=>{expanded[cat.id]=!expanded[cat.id];render();};
+      card.appendChild(hdr);
+
+      if(cat.isBonus&&isOpen){
+        const note=document.createElement('div');
+        note.className='bonus-note';
+        note.innerHTML='<span>⏱️</span><span>Yeh fixed agenda hai — in mein se koi bhi 2-3 choose karo har session ke liye</span>';
+        card.appendChild(note);
+      }
+
+      if(!isOpen&&catPct>0&&!cat.isBonus){
+        const mp=document.createElement('div');
+        mp.className='mini-prog';
+        mp.innerHTML=`<div class="mini-track"><div class="mini-fill" style="width:${catPct}%"></div></div>`;
+        card.appendChild(mp);
+      }
+
+      if(isOpen){
+        const tw=document.createElement('div');
+        tw.className='topics-wrap';
+        cat.topics.forEach((t,idx)=>{
+          const isDone=!!state[t.id];
+          const row=document.createElement('div');
+          row.className='topic-row'+(isDone?' done-row':'');
+          row.innerHTML=`<div class="chk${isDone?' on':''}"><span class="chk-tick">✓</span></div>
+            <div>
+              <div class="t-text${isDone?' done-text':''}">${t.text}</div>
+              ${t.badge?`<span class="sess-badge">${t.badge}</span>`:''}
+            </div>`;
+          row.onclick=()=>{state[t.id]=!state[t.id];save();render();};
+          tw.appendChild(row);
+        });
+        card.appendChild(tw);
+      }
+
+      el.appendChild(card);
+    });
+  });
+}
+
+load();
+</script>
